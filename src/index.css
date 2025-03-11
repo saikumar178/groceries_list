@@ -1,0 +1,29 @@
+body{
+    padding: auto;
+    margin: auto;
+}
+main{
+    display:flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+header{
+    background-color: blue;
+    display:flex;
+    text-align: center;
+    justify-content: center;
+}
+
+footer{
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.item svg:focus,
+.item svg:hover{
+    color:red;
+    outline:none;
+    
+}

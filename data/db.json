@@ -1,0 +1,18 @@
+{
+    "items":[
+        {
+            "id":1,
+            "checked":false,
+            "item":"cookies"
+        },{
+            "id":2,
+            "checked":false,
+            "item":"cool drinks"
+        },{
+            "id":2,
+            "checked":false,
+            "item":"deserts"
+        }
+
+    ]
+}

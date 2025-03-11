@@ -1,0 +1,123 @@
+.items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8f9fa;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+  }
+  
+  .items:hover {
+    background: #e9ecef;
+  }
+  
+  .items input[type="checkbox"] {
+    transform: scale(1.3);
+    margin-right: 10px;
+  }
+  
+  .items label {
+    flex: 1;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .items label:hover {
+    color: #007bff;
+  }
+  
+  .items svg {
+    color: #dc3545;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .items svg:hover {
+    color: #ff0000;
+  }
+  .addForm {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+  }
+  
+  .addForm label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .addForm input {
+    flex: 1;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .addForm input:focus {
+    border-color: #007bff;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .addForm button {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .addForm button:hover {
+    background: #218838;
+  }
+  
+  .addForm button svg {
+    font-size: 18px;
+  }
+  .searchForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .searchForm label {
+    display: none; /* Hide label for cleaner UI */
+  }
+  
+  .searchForm input {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  .searchForm input:focus {
+    border-color: #007bff;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+  }
+  
