@@ -1,18 +1,39 @@
 {
-    "items":[
-        {
-            "id":1,
-            "checked":false,
-            "item":"cookies"
-        },{
-            "id":2,
-            "checked":false,
-            "item":"cool drinks"
-        },{
-            "id":2,
-            "checked":false,
-            "item":"deserts"
-        }
-
-    ]
+  "items": [
+    {
+      "id": 1,
+      "checked": false,
+      "item": "cookies"
+    },
+    {
+      "id": 2,
+      "checked": false,
+      "item": "cool drinks"
+    },
+    {
+      "id": 3,
+      "checked": false,
+      "item": "deserts"
+    },
+    {
+      "id": 4,
+      "checked": false,
+      "item": "sweets"
+    },
+    {
+      "id": 5,
+      "checked": false,
+      "item": "icecream"
+    },
+    {
+      "id": 6,
+      "checked": false,
+      "item": "milkshakes"
+    },
+    {
+      "id": 7,
+      "checked": false,
+      "item": "juices"
+    }
+  ]
 }
