@@ -34,17 +34,13 @@ function App() {
     const timer = setTimeout(fetchItems, 2000);
     return () => clearTimeout(timer);
   }, []);
-
   const addItem = async (item) => {
-    const myNewItem = { checked: false, item }; // No ID
-    const listItems = [...items, myNewItem];
-    setItems(listItems); // Optimistic update
+    const myNewItem = { checked: false, item }; 
+    setItems([...items, myNewItem]); 
 
     const postOptions = {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(myNewItem),
     };
 
@@ -52,46 +48,54 @@ function App() {
         const response = await fetch(API_URL, postOptions);
         if (!response.ok) throw Error("Could not add item");
 
-        const newItem = await response.json(); // Get item with ID from API
-        setItems(prevItems => [...prevItems, newItem]); // Update with correct ID
+        const newItem = await response.json(); 
+        setItems(prevItems => [...prevItems, newItem]);
     } catch (error) {
         console.error("POST Error:", error);
-        setFetchError(error.message);
     }
 };
 
 
-  const handleCheck = async (id) => {
-    const updatedItems = items.map((item) =>
-      item.id === id ? { ...item, checked: !item.checked } : item
+const handleCheck = async (id) => {
+    const updatedItems = items.map(item =>
+        item.id === id ? { ...item, checked: !item.checked } : item
     );
     setItems(updatedItems);
-  
-    const myItem = updatedItems.filter((item) => item.id === id);
+
+    const itemToUpdate = updatedItems.find(item => item.id === id);
     const updateOptions = {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ checked:myItem[0].checked}), 
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ checked: itemToUpdate.checked }),
     };
-  
-    const reqUrl = `${API_URL}/${id}`;
-    const result = await apiRequest(reqUrl, updateOptions);
-  
-    if (result) setFetchError(result);
-  };
-  
 
-  const handleDelete = async (id) => {
-    const listItems = items.filter((item) => item.id !== id);
-    setItems(listItems);
+    try {
+        const response = await fetch(`${API_URL}/${id}`, updateOptions);
+        if (!response.ok) throw new Error(`Update failed: ${response.status}`);
+    } catch (error) {
+        console.error("PATCH Error:", error.message);
+    }
+};
 
-    const deleteOptions ={method:'DELETE'};
-    const reqUrl = `${API_URL}/${id}`; 
-    const result = await apiRequest(reqUrl, deleteOptions);
-    if (result) setFetchError(result);
-  };
+const handleDelete = async (id) => {
+  console.log("Deleting ID:", id); 
+  console.log("Current items before deleting:", items);
+
+  const deleteOptions = { method: "DELETE" };
+  const reqUrl = `${API_URL}/${id}`;
+
+  try {
+      const response = await fetch(reqUrl, deleteOptions);
+      if (!response.ok) throw new Error(`Delete failed: ${response.status}`);
+
+      setItems(prevItems => prevItems.filter(item => item.id !== id));
+      console.log(`Item ${id} deleted successfully.`);
+  } catch (error) {
+      console.error("Delete Error:", error.message);
+  }
+};
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();

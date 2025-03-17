@@ -103,7 +103,7 @@
   }
   
   .searchForm label {
-    display: none; /* Hide label for cleaner UI */
+    display: none;
   }
   
   .searchForm input {

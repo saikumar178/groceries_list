@@ -3,10 +3,15 @@
     {
       "id": "1",
       "checked": false,
+      "item": "fruits"
+    },
+    {
+      "id": "2",
+      "checked": false,
       "item": "milkshake"
     },
     {
-      "id": "b6a7",
+      "id": "75b6",
       "checked": false,
       "item": "donut"
     }
